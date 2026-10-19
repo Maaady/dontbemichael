@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Don't Be Michael</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://api.openai.com https://*.openai.com wss://api.openai.com wss://*.openai.com; media-src 'self' blob: mediastream:;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self' http[...]">
     <!-- Fonts are bundled (src/renderer/src/design/fonts.css), never fetched:
          Google's font hosts are blocked in mainland China. The splash uses
          the v2 tokens (branding/DESIGN.md 3) before the stylesheet loads. -->
@@ -27,9 +28,9 @@
   <body>
     <div id="root">
       <div id="cth-splash">
-        <div class="mk"></div>
+        <div class="mk" aria-hidden="true"></div>
         <div class="title">Don't Be Michael</div>
-        <div class="hint">Opening the office…</div>
+        <div class="hint" role="status" aria-live="polite">Opening the office…</div>
       </div>
     </div>
     <script type="module" src="./src/main.tsx"></script>
